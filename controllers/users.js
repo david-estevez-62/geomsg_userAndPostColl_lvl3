@@ -2,6 +2,7 @@ var User = require('../models/users.js');
 var Message = require('../models/messages.js');
 
 
+
 var userController = {
 
 
@@ -11,7 +12,7 @@ var userController = {
 
           var date = new Date();
           var username = req.user.username;
-
+          
 
           User.findOne({username:username}, function(err, user) {
             if (err) return handleErr(err);
@@ -78,7 +79,6 @@ var userController = {
         });
 
         newMsg.save(function(err, data){
-          console.log("saved", data);
           res.send(data);
         })
 

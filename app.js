@@ -26,7 +26,6 @@ var storage = multer.diskStorage({
     var uploadedFileName;
 
 	    if (exists) {
-	    	console.log('gots in here', typeof file.originalname)
 	        uploadedFileName = (Date.now() + '_' + file.originalname).replace(/\s/g, '');
 	    } else {
 	        uploadedFileName = fileNameSpaceless;
@@ -74,32 +73,11 @@ app.use(passport.initialize());
 
 app.use(passport.session());
 
-// var Message = require('./models/messages.js');
-// var count = 0;
-
-// app.use(function(req, res, next){
-// 	if(count === 0){
-// 		var newMsg = new Message({
-// 			location: {
-// 				coordinates: [27.1580, -80.19289]
-// 			},
-// 			datetime: new Date(),
-// 			postedBy: "58b644eeb3048b047c65848f"
-// 		});
-
-// 		newMsg.save(function(err, data){
-
-// 		})
-
-// 		count++;
-// 	}else{
-// 		Message.find({}).populate("postedBy").exec(function(err, data){
-// 			console.log(data);
-// 		})
-// 	}
 
 
-// })
+
+
+
 
 
 
